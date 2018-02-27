@@ -1,3 +1,8 @@
 dist/
 pypayex.egg-info/
 suds-0.4-py2.7.egg
+build
+__pycache__
+.swp
+.idea
+pypayex.egg-info

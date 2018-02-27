@@ -1,4 +1,5 @@
-from payex.handlers import BaseHandler
+from .handlers import BaseHandler
+
 
 class PxAgreementHandler(BaseHandler):
     """
@@ -10,7 +11,7 @@ class PxAgreementHandler(BaseHandler):
     
     def __call__(self, *args, **kwargs):
         # Set the parameters on object
-        for key, value in kwargs.iteritems():
+        for key, value in kwargs.items():
             setattr(self, key, value)
         
         self._client = self.client_factory()
@@ -18,6 +19,7 @@ class PxAgreementHandler(BaseHandler):
 ###################
 # METHOD HANDLERS #
 ###################
+
 
 class PxCreateAgreement3Handler(PxAgreementHandler):
     """
@@ -45,6 +47,7 @@ class PxCreateAgreement3Handler(PxAgreementHandler):
         
         return self._send_request()
 
+
 class PxDeleteAgreementHandler(PxAgreementHandler):
     """
     Reference:
@@ -65,6 +68,7 @@ class PxDeleteAgreementHandler(PxAgreementHandler):
         
         return self._send_request()
 
+
 class PxAgreementCheckHandler(PxAgreementHandler):
     """
     Reference:
@@ -84,6 +88,7 @@ class PxAgreementCheckHandler(PxAgreementHandler):
         self._endpoint = self._client.service.Check
         
         return self._send_request()
+
 
 class PxAutoPay2Handler(PxAgreementHandler):
     """

@@ -1,4 +1,5 @@
-from payex.handlers import BaseHandler
+from .handlers import BaseHandler
+
 
 class PxOrderHandler(BaseHandler):
     """
@@ -11,7 +12,7 @@ class PxOrderHandler(BaseHandler):
     def __call__(self, *args, **kwargs):
         
         # Set the parameters on object
-        for key, value in kwargs.iteritems():
+        for key, value in kwargs.items():
             setattr(self, key, value)
 
         self._client = self.client_factory()
@@ -19,6 +20,7 @@ class PxOrderHandler(BaseHandler):
 ###################
 # METHOD HANDLERS #
 ###################
+
 
 class PxOrderInitialize8Handler(PxOrderHandler):
     """
@@ -108,6 +110,7 @@ class PxOrderCompleteHandler(PxOrderHandler):
         
         return self._send_request()
 
+
 class PxOrderCapture4Handler(PxOrderHandler):
     """
     Reference:
@@ -132,6 +135,7 @@ class PxOrderCapture4Handler(PxOrderHandler):
         
         return self._send_request()
 
+
 class PxOrderGetTransactionDetails2Handler(PxOrderHandler):
     """
     Reference:
@@ -152,6 +156,7 @@ class PxOrderGetTransactionDetails2Handler(PxOrderHandler):
         
         return self._send_request()
 
+
 class PxCancel2Handler(PxOrderHandler):
     """
     Reference:
@@ -171,6 +176,7 @@ class PxCancel2Handler(PxOrderHandler):
         self._endpoint = self._client.service.Cancel2
         
         return self._send_request()
+
 
 class PxCredit5Handler(PxOrderHandler):
     """

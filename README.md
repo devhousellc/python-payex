@@ -1,19 +1,19 @@
-# pypayex
+# python3-payex
 
-pypayex is a Python module for interacting with the PayEx Soap API.
+python3-payex is a Python module for interacting with the PayEx Soap API.
 
 The PayEx implementation manual is available here:
 http://www.payexpim.com/
 
 ## Installation
 
-Install `pypayex` (available on PyPi):
+Install `python3-payex`:
 
 ```shell
-pip install pypayex
+pip install git+https://github.com/devhousellc/python3-payex.git
 ```
 
-Requires the `suds` SOAP library, and `ordereddict` on Python < 2.7.
+Requires the `suds-py3` SOAP library, and `six` on python >= 3.6.
 
 ## Usage
 

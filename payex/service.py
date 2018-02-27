@@ -1,5 +1,4 @@
-from payex import pxagreement
-from payex import pxorder
+from . import pxagreement, pxorder
 
 
 class PayEx(object):

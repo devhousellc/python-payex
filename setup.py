@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-import os
-import sys
 
 try:
     from setuptools import setup
@@ -9,30 +7,21 @@ except ImportError:
 
 from payex import __version__
 
-def publish():
-    """Publish to Pypi"""
-    os.system("python setup.py sdist upload")
-
-if sys.argv[-1] == "publish":
-    publish()
-    sys.exit()
 
 # Requirements
 install_requires = [
-    'suds==0.4',
+    'six==1.11.0',
+    'suds_py3==1.3.3.0',
 ]
 
-if sys.version_info < (2, 7):
-    install_requires.append('ordereddict')
-
 setup(
-    name='pypayex',
+    name='python3-payex',
     version=__version__,
     description='PayEx API wrapper',
     long_description=open('README.md').read(),
-    author='Funkbit',
-    author_email='post@funkbit.no',
-    url='https://github.com/funkbit/pypayex',
+    author='Ivan K.',
+    author_email='ivankunmail@gmail.com',
+    url='https://github.com/devhousellc/python3-payex.git',
     packages=['payex'],
     license='BSD',
     install_requires=install_requires,
@@ -42,8 +31,7 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.6',
-        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.6',
         'Topic :: Software Development :: Libraries :: Python Modules',
     )
 )
